@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // This file is part of Moodle - http://moodle.org/
 //
@@ -86,7 +86,6 @@ class block_enrol_duration extends block_base {
                                     '</em> '.get_string('noexpiration', 'block_enrol_duration').'.</p>';
         }
         $this->content->footer = '';
-
         return $this->content;
     }
 }
