@@ -41,7 +41,7 @@ class block_enrol_duration extends block_base {
     }
 
     function instance_allow_multiple() {
-        return true;
+        return false;
     }
 
     function get_content() {
@@ -63,7 +63,7 @@ class block_enrol_duration extends block_base {
 
         $this->content = new stdClass;
 
-        if ($duration) {
+        if ($duration && ($duration->timeend > time())) {
             $days = ceil(($duration->timeend - time())/ 86400);
             $weeks = $days / 7;
             $date = getdate($duration->timeend);
@@ -86,6 +86,7 @@ class block_enrol_duration extends block_base {
                                     '</em> '.get_string('noexpiration', 'block_enrol_duration').'.</p>';
         }
         $this->content->footer = '';
+
         return $this->content;
     }
 }

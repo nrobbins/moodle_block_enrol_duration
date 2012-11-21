@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -16,17 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_enrol_duration', language 'en', branch 'MOODLE_20_STABLE'
+ * Blog tags block caps.
  *
  * @package   block_enrol_duration
  * @copyright  2012 Nathan Robbins (https://github.com/nrobbins)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['configtitle'] = 'Block title';
-$string['pluginname'] = 'Enrolment Duration';
-$string['enrolmentin'] = 'Your enrolment in';
-$string['expiresin'] = 'expires in';
-$string['days'] = 'days';
-$string['noexpiration'] = 'does not expire';
-$string['enrol_duration:addinstance'] = 'Add a new Enrolment Duration block';
+defined('MOODLE_INTERNAL') || die();
+
+$capabilities = array(
+
+    'block/enrol_duration:addinstance' => array(
+        'riskbitmask' => '',
+
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_BLOCK,
+        'archetypes' => array(
+            'editingteacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
+    ),
+);
