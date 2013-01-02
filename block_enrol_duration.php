@@ -45,7 +45,7 @@ class block_enrol_duration extends block_base {
     }
 
     function get_content() {
-        global $CFG, $USER, $DB;
+        global $CFG, $USER, $DB, $OUTPUT;
         require_once('lib.php');
 
         if ($this->content !== null) {
@@ -86,6 +86,11 @@ class block_enrol_duration extends block_base {
                                     '</em> '.get_string('noexpiration', 'block_enrol_duration').'.</p>';
         }
         $this->content->footer = '';
+        if(isset($this->config->information) && $this->config->information != '') {
+            $this->content->footer = '<a href="'.$this->config->information.'"><img class="iconhelp" src="'.$OUTPUT->pix_url('docs')
+            .'" alt="'.get_string('moreinformation', 'block_enrol_duration').'"> '
+            .get_string('moreinformation', 'block_enrol_duration').'</a>';
+        }
 
         return $this->content;
     }

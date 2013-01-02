@@ -29,5 +29,11 @@ class block_enrol_duration_edit_form extends block_edit_form {
 
         $mform->addElement('text', 'config_title', get_string('configtitle', 'block_enrol_duration'));
         $mform->setType('config_title', PARAM_MULTILANG);
+        $mform->setDefault('config_title', get_string('pluginname', 'block_enrol_duration'));
+        
+        $mform->addElement('text', 'config_information', get_string('moreinformation', 'block_enrol_duration'), 'size="50"');
+        $mform->setType('config_information', PARAM_MULTILANG);
+        
+        $mform->addHelpButton('config_information', 'moreinformation', 'block_enrol_duration');
     }
 }

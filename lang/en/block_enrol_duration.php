@@ -24,9 +24,11 @@
  */
 
 $string['configtitle'] = 'Block title';
-$string['pluginname'] = 'Enrolment Duration';
+$string['pluginname'] = 'Enrolment duration';
 $string['enrolmentin'] = 'Your enrolment in';
 $string['expiresin'] = 'expires in';
 $string['days'] = 'days';
 $string['noexpiration'] = 'does not expire';
 $string['enrol_duration:addinstance'] = 'Add a new Enrolment Duration block';
+$string['moreinformation'] = 'More information';
+$string['moreinformation_help'] = 'Provide the user with a link to enrolment duration policies. Leave blank to hide the "More information" link.';
